@@ -1,22 +1,33 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar1{
+  background-color: rgb(6,1,41);
+  height: 7vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.navbar1 ul {
+  display: flex;
+}
+
+.link{
+  color: blue;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.link:hover {
+  color: white;
+  background-color: rgba(255,255,255,0.15);
+}
+.Lazy-hero h1{
+  font-family: 'Questrial', sans-serif;
+  color: white;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
