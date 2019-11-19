@@ -1,6 +1,12 @@
 page 1
 nav - home / intro (hero)
 COINS
-top 10 COINS
-top 50 coins // toggle between the 2?
+Done top 20.
+Can then do some filters - and pass through the updated data!
+
+Onclick of the Row - then push to new location /ticker
+if 24hr change is positive or negative, add colours!
+
+DO USD / EUR / GBP
+Sort by Volume, 
 click on each coin, get more info.  Use the ID / name part with the get request
