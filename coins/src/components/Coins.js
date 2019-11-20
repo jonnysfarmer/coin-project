@@ -20,7 +20,7 @@ const Coins = () => {
     console.log('loading')
     return <div>Loading</div>
   }
-  console.log(coins20)
+  // console.log(coins20)
   return (
     <section className="section" id="coin-body">
       <div className="container">

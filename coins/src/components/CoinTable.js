@@ -1,17 +1,21 @@
 import React from 'react'
+import { useHistory } from "react-router-dom";
+
+
+
 
 const CoinTable = ({ data }) => {
+  let history = useHistory();
 
-  // console.log(props)
-
+  const handleClick = (element) => {
+    history.push(`coins/${element.id}`)
+  }
   if (!data) {
     console.log('loading')
-    console.log(data)
 
     return <div>Loading</div>
   } else {
   console.log('loaded')
-  console.log(data[0])
   return (
     <table className="table table is-hoverable table is-fullwidth">
       <thead>
@@ -29,7 +33,7 @@ const CoinTable = ({ data }) => {
       <tbody>
       {data.map((element, i) => {
       return (
-        <tr key={i}>
+        <tr key={i} onClick={() =>handleClick(element)}>
           <td><img src={element.image} alt="Icon" width="25px" height="25px"></img></td>
           <td className="is-hidden-mobile">{element.name}</td>
           <td>{element.symbol}</td>

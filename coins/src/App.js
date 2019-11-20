@@ -8,6 +8,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Coins from './components/Coins'
+import SingleCoin from './components/SingleCoin'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/coins" component={Coins} />
-      {/* <Route path="/cheeses/:id" component={SingleCheese} />  */}
+      <Route path="/coins/:id" component={SingleCoin} />
     </Switch>
 
   </BrowserRouter>
