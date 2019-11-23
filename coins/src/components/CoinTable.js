@@ -1,5 +1,7 @@
 import React from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import Loader from './Loader'
+// https://github.com/LucasBassetti/react-css-loaders'
 
 
 
@@ -11,11 +13,11 @@ const CoinTable = ({ data }) => {
     history.push(`coins/${element.id}`)
   }
   if (!data) {
-    console.log('loading')
 
-    return <div>Loading</div>
+
+    return <Loader />
   } else {
-  console.log('loaded')
+
   return (
     <table className="table table is-hoverable table is-fullwidth">
       <thead>

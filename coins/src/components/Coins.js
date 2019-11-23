@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Loader from './Loader'
 
 import CoinTable from './CoinTable'
 
@@ -18,7 +19,7 @@ const Coins = () => {
 
   if (coins20 === []){
     console.log('loading')
-    return <div>Loading</div>
+    return <Loader />
   }
   // console.log(coins20)
   return (
