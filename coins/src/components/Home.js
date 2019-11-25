@@ -1,6 +1,6 @@
 import React from 'react'
 import LazyHero from 'react-lazy-hero'
-import { Animation } from 'react-animated-css'
+// import { Animation } from 'react-animated-css'
 // https://digital-flowers.github.io/react-animated-css.html
 
 

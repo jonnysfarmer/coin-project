@@ -4,6 +4,10 @@ $header-background-color:rgb(6,1,41);
 *{
   box-sizing: border-box;
 }
+body {
+  min-height: 100vh;
+  background-color: $header-background-color;
+}
 .navbar1{
   background-color: $header-background-color;
   height: 7vh;
@@ -36,9 +40,31 @@ $header-background-color:rgb(6,1,41);
 }
 
 #coin-body {
-  height: 100%;
+  max-height: 100%;
   background-color: $header-background-color;
 }
 .background-dark{
   background-color: $header-background-color;
+}
+p{
+  font-family: 'Questrial', sans-serif;
+  color: $header-background-color;
+}
+.background-white {
+  background-color: rgba(255,255,255,0.95)
+}
+.column:hover {
+  background-color: rgba(6,1,41, 0.1);
+}
+tbody {
+  tr:hover{
+    background-color: rgba(6,1,41, 0.1);
+  }
+
+}
+table {
+  font-size: 14px;
+}
+tspan, .recharts-legend-item-text {
+  font-size: 12px;
 }

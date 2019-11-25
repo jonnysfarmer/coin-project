@@ -15,11 +15,11 @@ const CoinTable = ({ data }) => {
   if (!data) {
 
 
-    return <Loader />
+    return <Loader color = "#FFF" backgound = "background-dark"/>
   } else {
 
   return (
-    <table className="table table is-hoverable table is-fullwidth">
+    <table className="table table is-fullwidth background-white">
       <thead>
         <tr>
           <th>Icon</th>

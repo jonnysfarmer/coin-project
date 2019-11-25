@@ -19,11 +19,11 @@ const Coins = () => {
 
   if (coins20 === []){
     console.log('loading')
-    return <Loader />
+    return <Loader color = "#FFF" backgound = "background-dark"/>
   }
   // console.log(coins20)
   return (
-    <section className="section" id="coin-body">
+    <section className="section is-fullheight" id="coin-body">
       <div className="container">
       <CoinTable data={coins20}/>
 
