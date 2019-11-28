@@ -49,16 +49,19 @@ body {
 p{
   font-family: 'Questrial', sans-serif;
   color: $header-background-color;
+  margin: 1px 0px;
+  font-weight: 500;
 }
 .background-white {
   background-color: rgba(255,255,255,0.95)
 }
 .column:hover {
-  background-color: rgba(6,1,41, 0.1);
+  // background-color: rgba(6,1,41, 0.1);
 }
 tbody {
   tr:hover{
-    background-color: rgba(6,1,41, 0.1);
+    background-color: $link-text-color;
+    color: white;
   }
 
 }
@@ -67,4 +70,63 @@ table {
 }
 tspan, .recharts-legend-item-text {
   font-size: 12px;
+}
+.graph-div {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.title {
+  font-family: 'Questrial', sans-serif;
+  color: $header-background-color;
+  font-size: 20px;
+}
+.align-right{
+  float: right;
+  font-weight: 400;
+}
+.title2{
+  font-family: 'Questrial', sans-serif;
+  background-color: $header-background-color;
+  color: white;
+  font-size: 18px;
+  padding: 5px 8px;
+  margin: 5px 0px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.has-text-centered{
+  img{
+    margin: 15px 15px;
+  }
+}
+.coin-title {
+  font-family: 'Questrial', sans-serif;
+  color: white;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0px 0 10px 0px;
+}
+.coin-subtitle{
+  font-family: 'Questrial', sans-serif;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  padding: 0 5px;
+}
+
+.link2{
+  color: $link-text-color;
+  padding: 5px;
+  margin: 5px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.link2:hover {
+  color: white;
+  background-color: rgba(255,255,255,0.15);
 }

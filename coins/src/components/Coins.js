@@ -4,29 +4,67 @@ import Loader from './Loader'
 
 import CoinTable from './CoinTable'
 
+
 const Coins = () => {
 
   const [coins20, setCoins20] = useState([])
+  const [filtercoins, setFilterCoins] = useState([])
 
   const hook = () => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=1h%2C%2024hr%2C%207d')
-    .then(response => {
-      setCoins20(response.data)
-    })
-    .catch(err => console.log(err))
+      .then(response => {
+        setCoins20(response.data)
+        setFilterCoins(response.data)
+      })
+      .catch(err => console.log(err))
   }
-  useEffect(hook, [])
 
-  if (coins20 === []){
+  // const marketCap = () =>{
+  //   hook()
+  //   console.log('updated')
+  // }
+  // const filter = () => {
+  //   const filter = coins20.sort((a, b) => (b.current_price) - (a.current_price))
+  //   console.log(filter)
+  //   setFilterCoins('')
+  //   setFilterCoins(filter)
+  
+  //   console.log('done')
+
+  // }
+ 
+  useEffect(hook, [])
+ 
+  
+
+  //Market Cap - could just redo the hook
+  //current price - do a sort method
+
+  
+  
+
+
+  if (filtercoins === []) {
     console.log('loading')
-    return <Loader color = "#FFF" backgound = "background-dark"/>
+    return <Loader color="#FFF" backgound="background-dark" />
   }
   // console.log(coins20)
   return (
     <section className="section is-fullheight" id="coin-body">
       <div className="container">
-      <CoinTable data={coins20}/>
-
+        <div className="container">
+          <h1 className="coin-title">coin overview</h1>
+          <h2 className="coin-subtitle">by market cap</h2>
+          {/* <div className="navbar1">
+            <ul>
+              <li className="link2" onClick={()=>hook()}>MARKET CAP</li>
+              <li className="link2" onClick={() => filter()}>CURRENT PRICE</li>
+            </ul>
+          </div> */}
+        </div>
+        <div className="container">
+          <CoinTable data={ filtercoins } />
+        </div>
       </div>
     </section>
 

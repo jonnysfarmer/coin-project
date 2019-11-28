@@ -42,31 +42,32 @@ class SingleCoin extends React.Component {
           <div className="container">
             <div className="columns">
               <div className="column">
+              <div className="title2">Coin Overview</div>
                 <div className = "has-text-centered">
                   <img src={coin.image.large} alt="Logo" />
                 </div>
-                <p>Name : {coin.name}</p>
-                <p>Symbol : {coin.symbol}</p>
-                <p>Homepage : {coin.links.homepage[0]}</p>
-                <p>Block Time (min) : {coin.block_time_in_minutes}</p>
-                <p>Genesis Date : {coin.genesis_date}</p>
+                <p>Name : <span className="align-right">{coin.name}</span></p>
+                <p>Symbol : <span className="align-right">{coin.symbol}</span></p>
+                <p>Homepage : <span className="align-right">{coin.links.homepage[0]}</span></p>
+                <p>Block Time (min) : <span className="align-right">{coin.block_time_in_minutes}</span></p>
+                {/* <p>Genesis Date : {coin.genesis_date}</p> */}
               </div>
               <div className="column">
-              {/* <img src={coin.image.thumb} alt="Logo" /> */}
+              <div className="title2">Market Data</div>
               <p>Current Price in :</p>
-              <p>USD : {coin.market_data.current_price.usd}</p>
-              <p>EUR : {coin.market_data.current_price.eur}</p>
-              <p>GBP : {coin.market_data.current_price.gbp}</p>
+              <p>USD : <span className="align-right">{coin.market_data.current_price.usd}</span></p>
+              <p>EUR : <span className="align-right">{coin.market_data.current_price.eur}</span></p>
+              <p>GBP : <span className="align-right">{coin.market_data.current_price.gbp}</span></p>
               <br></br>
-              <p>Percentage Change in 24hr : {coin.market_data.price_change_percentage_24h}</p>
-              <p>24hr Price Change : {coin.market_data.price_change_24h}%</p>
+              <p>Percentage Change in 24hr : <span className="align-right">{coin.market_data.price_change_percentage_24h}</span></p>
+              <p>24hr Price Change : <span className="align-right">{coin.market_data.price_change_24h}%</span></p>
               <br />
-              <p>24hr High : {coin.market_data.high_24h.usd}</p>
-              <p>24hr Low : {coin.market_data.low_24h.usd}</p>
+              <p>24hr High : <span className="align-right">{coin.market_data.high_24h.usd}</span></p>
+              <p>24hr Low : <span className="align-right">{coin.market_data.low_24h.usd}</span></p>
              </div>
               <div className="column">
-                <div className="title">Graph showing % price change over Time</div>
-                <div>
+                <div className="title2">% Price change over time</div>
+                <div className="graph-div">
                   <GraphSingle  data={coin.market_data}/>
                 </div>
                </div>

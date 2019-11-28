@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom"
 import Loader from './Loader'
 // https://github.com/LucasBassetti/react-css-loaders'
@@ -7,17 +7,21 @@ import Loader from './Loader'
 
 
 const CoinTable = ({ data }) => {
-  let history = useHistory();
+  let history = useHistory()
+  const data2 = data
+ 
+  
 
   const handleClick = (element) => {
     history.push(`coins/${element.id}`)
   }
-  if (!data) {
-
-
+  if (!data2) {
+    // console.log(coindata)
     return <Loader color = "#FFF" backgound = "background-dark"/>
+    
   } else {
-
+    // console.log(data)
+    // console.log(coindata)
   return (
     <table className="table table is-fullwidth background-white">
       <thead>
@@ -33,9 +37,9 @@ const CoinTable = ({ data }) => {
         </tr>
       </thead>
       <tbody>
-      {data.map((element, i) => {
+      {data2.map((element, i) => {
       return (
-        <tr key={i} onClick={() =>handleClick(element)}>
+        <tr key={element.id} onClick={() =>handleClick(element)}>
           <td><img src={element.image} alt="Icon" width="25px" height="25px"></img></td>
           <td className="is-hidden-mobile">{element.name}</td>
           <td>{element.symbol}</td>
