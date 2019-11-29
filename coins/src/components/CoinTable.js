@@ -9,7 +9,14 @@ import Loader from './Loader'
 const CoinTable = ({ data }) => {
   let history = useHistory()
   const data2 = data
- 
+  
+  // const [coindata, setcoindata] = useState([])
+
+  // const update = () => {
+  //   setcoindata(data2)
+  // }
+  // useEffect(update, [])
+  
   
 
   const handleClick = (element) => {
@@ -20,7 +27,7 @@ const CoinTable = ({ data }) => {
     return <Loader color = "#FFF" backgound = "background-dark"/>
     
   } else {
-    // console.log(data)
+    // console.log(data2)
     // console.log(coindata)
   return (
     <table className="table table is-fullwidth background-white">
