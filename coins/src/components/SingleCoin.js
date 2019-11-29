@@ -3,6 +3,7 @@ import axios from 'axios'
 import Loader from './Loader'
 // https://github.com/LucasBassetti/react-css-loaders'
 import GraphSingle from './GraphChange'
+import NewsFeedSingle from './newsFeedSingle'
 
 
 class SingleCoin extends React.Component {
@@ -12,18 +13,32 @@ class SingleCoin extends React.Component {
     super()
     this.state = {
       coin: null,
-      error: false
+      news: null,
+      error: false,
+      error_news: false
     }
   }
 
+  newsHook = (data) => {
+    const symbol = data.symbol
+    axios
+    .get(`https://data.messari.io/api/v1/news/${symbol}`)
+    .then(response => this.setState({ news: response.data.data }))
+    .catch(err => this.setState({ error_news: err.response.status }))
 
+}
+
+  
 
   componentDidMount() {
     const id = (this.props.match.params.id)
     axios
       .get(`https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=true`)
-      .then(response => this.setState({ coin: response.data }))
-      .catch(err => this.setState({ error: err.response.status }))
+      .then(response => {
+        this.newsHook(response.data)
+        this.setState({ coin: response.data })})
+      // .then(response => this.newsHook(response.data))
+      .catch(err => this.setState({ error: err }))
 
   }
 // .name - .symbol - .block_time_in_minutes .links.homepage[0]
@@ -31,12 +46,15 @@ class SingleCoin extends React.Component {
 // .market_cap.usd .high_24h.usd  .low_24h.usd .price_change_24h
 
   render() {
-    if (!this.state.coin) {
+
+    if (!this.state.coin || !this.state.news) {
       return (
         <Loader color = "#000" background = "background-white"/>
       )
     } else {
       const { coin } = this.state;
+      // console.log(this.state.news)
+      // console.log(this.state.err)
       return (
         <section className="section is-fullheight background-white">
           <div className="container">
@@ -72,6 +90,11 @@ class SingleCoin extends React.Component {
                 </div>
                </div>
             </div>
+          </div>
+          <div className="section">
+          <div className="title2">News Feed</div>
+
+            <NewsFeedSingle data={this.state.news} />
           </div>
         </section>
 

@@ -6,29 +6,16 @@ import Loader from './Loader'
 
 
 
-const CoinTable = ({ data }) => {
+const CoinTable = ( props ) => {
   let history = useHistory()
-  const data2 = data
-  
-  // const [coindata, setcoindata] = useState([])
+  let data2 = props.data
 
-  // const update = () => {
-  //   setcoindata(data2)
-  // }
-  // useEffect(update, [])
-  
   
 
   const handleClick = (element) => {
     history.push(`coins/${element.id}`)
   }
-  if (!data2) {
-    // console.log(coindata)
-    return <Loader color = "#FFF" backgound = "background-dark"/>
-    
-  } else {
-    // console.log(data2)
-    // console.log(coindata)
+
   return (
     <table className="table table is-fullwidth background-white">
       <thead>
@@ -63,7 +50,7 @@ const CoinTable = ({ data }) => {
     </table>
    
   )
-  }
+  // }
 }
 
 export default CoinTable

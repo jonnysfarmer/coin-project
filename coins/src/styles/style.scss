@@ -62,8 +62,8 @@ tbody {
   tr:hover{
     background-color: $link-text-color;
     color: white;
+    
   }
-
 }
 table {
   font-size: 14px;
@@ -129,4 +129,27 @@ tspan, .recharts-legend-item-text {
 .link2:hover {
   color: white;
   background-color: rgba(255,255,255,0.15);
+}
+.news-feed{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card{
+  height: 150px;
+  width: 200px;
+  margin: 15px;
+
+  .card-footer{
+    height: 20%;
+    background-color: $link-text-color;
+    color: white;
+  }
+  .card-content{
+    height: 80%;
+  }
+  .title{
+    color: $header-background-color;
+    font-size: 14px
+  }
 }

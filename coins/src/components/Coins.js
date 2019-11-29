@@ -25,22 +25,19 @@ const Coins = () => {
   // }
   // const filter = () => {
   //   const filter = coins20.sort((a, b) => (b.current_price) - (a.current_price))
-  //   console.log(filter)
+  //   // console.log(filter)
   //   setFilterCoins('')
   //   setFilterCoins(filter)
-  
+  //   setCoins20(filter)
+  //   console.log(filtercoins)
   //   console.log('done')
 
   // }
  
   useEffect(hook, [])
- 
-  
 
-  //Market Cap - could just redo the hook
-  //current price - do a sort method
 
-  
+
   
 
 
@@ -57,13 +54,13 @@ const Coins = () => {
           <h2 className="coin-subtitle">by market cap</h2>
           {/* <div className="navbar1">
             <ul>
-              <li className="link2" onClick={()=>hook()}>MARKET CAP</li>
+              <li className="link2" onClick={()=> marketCap()}>MARKET CAP</li>
               <li className="link2" onClick={() => filter()}>CURRENT PRICE</li>
             </ul>
           </div> */}
         </div>
         <div className="container">
-          <CoinTable data={ filtercoins } />
+          <CoinTable data={filtercoins} />
         </div>
       </div>
     </section>
