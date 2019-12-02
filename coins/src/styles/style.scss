@@ -8,48 +8,66 @@ body {
   min-height: 100vh;
   background-color: $header-background-color;
 }
-.navbar1{
-  background-color: $header-background-color;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  vertical-align: top;
-    ul{
-      display: flex;
-    }
+.section{
+  padding-top: 85px;
 }
+
+
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+  width: 30px;
+  height: 25px;
+  left: 30px;
+  top: 30px;
   
 }
 .bm-burger-bars{
-  background-color: white;
+  background-color:$link-text-color;
+  // border: 0.5px solid $header-background-color
+}
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+.bm-cross {
+  background: $header-background-color;
+}
+.bm-menu {
+  background: rgba(255,255,255,0.95);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  padding-top: 80px;
+}
+.bm-item-list {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
 }
 
-// .bm-burger-button{
-//   color: white;
-//   background-color: white;
-//   float: top;
-  
-// }
-// .hero{
-//   margin-top: 30px;
-// }
+/* Individual item */
+.bm-item {
+  // display: flex;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .link{
   color: $link-text-color;
-  padding: 10px;
+  padding: 7px;
   margin: 5px;
   font-family: 'Questrial', sans-serif;
   font-size: 18px;
   font-weight: 700;
+  // text-align: center;
+  // flex-direction: row;
+
 }
 .link:hover {
-  color: white;
-  background-color: rgba(255,255,255,0.15);
+  color: $header-background-color;
+  // background-color: rgba(255,255,255,0.15);
 }
 .Lazy-hero h1{
   display: flex;
