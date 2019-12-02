@@ -10,15 +10,35 @@ body {
 }
 .navbar1{
   background-color: $header-background-color;
-  height: 7vh;
+  height: 5vh;
   display: flex;
   align-items: center;
+  vertical-align: top;
     ul{
       display: flex;
     }
 }
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+  
+}
+.bm-burger-bars{
+  background-color: white;
+}
 
-
+// .bm-burger-button{
+//   color: white;
+//   background-color: white;
+//   float: top;
+  
+// }
+// .hero{
+//   margin-top: 30px;
+// }
 .link{
   color: $link-text-color;
   padding: 10px;
@@ -32,6 +52,7 @@ body {
   background-color: rgba(255,255,255,0.15);
 }
 .Lazy-hero h1{
+  display: flex;
   font-family: 'Questrial', sans-serif;
   color: white;
   font-size: 46px;
