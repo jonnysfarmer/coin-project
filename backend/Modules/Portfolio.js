@@ -1,0 +1,22 @@
+const mongoose = require('mongoose')
+const uniqueValidator = require('mongoose-unique-validator')
+
+const coinSchema = new mongoose.Schema({
+  coin_name: ({ type: String, required: true, unique: true }),
+  coin_id: ({ type: String, required: true }),
+  number: ({ type: String, required: true })
+})
+
+const portfolioSchema = new mongoose.Schema({
+  portfolioname: { type: String, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  portfolio: [ coinSchema ]
+
+},
+{
+  timestamps: true
+})
+
+coinSchema.plugin(uniqueValidator)
+
+module.exports = mongoose.model('Portfolio', portfolioSchema)
