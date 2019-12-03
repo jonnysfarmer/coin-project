@@ -10,7 +10,7 @@ const coinSchema = new mongoose.Schema({
 const portfolioSchema = new mongoose.Schema({
   portfolioname: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  portfolio: [ coinSchema ]
+  coins: [ coinSchema ]
 
 },
 {

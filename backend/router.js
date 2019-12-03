@@ -7,7 +7,7 @@ const users = require('./controllers/users')
 
 //All these are secure Routes
 
-// DONE SO FAR  index, create
+
 router.route('/portfolio')
   .get(portfolios.index) //this is just for testing!
   .post(portfolios.create)
@@ -20,11 +20,11 @@ router.route('/portfolio/:id')
 
 router.route('/portfolio/:id/coins')
   .get(portfolios.showCoins)
-  .put(portfolios.updateCoins)
   .post(portfolios.addCoins)
 
-router.route('/animals/:id/comments/:commentId')
+router.route('/portfolio/:id/:coinId')
   .delete(portfolios.deleteCoins)
+  .put(portfolios.updateCoins)
 
 
 
