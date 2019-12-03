@@ -1,4 +1,4 @@
-const Portfolio = require('../Modules/Portfolio')
+const Portfolio = require('../models/Portfolio')
 
 function create(req, res) {
   req.body.user = req.currentUser //this links to the secure route.

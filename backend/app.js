@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const router = require('./router')
 
 const { DBuri, port } = require('./config/enviroment')
-// const router = require('./router')
+
 
 const app = express()
 

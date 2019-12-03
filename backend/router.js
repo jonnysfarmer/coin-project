@@ -9,18 +9,20 @@ const users = require('./controllers/users')
 
 
 router.route('/portfolio')
-  .get(portfolios.index) //this is just for testing!
+  .get(portfolios.index) // WORKS
   .post(portfolios.create)
 
 //can only get these if you are the specific user
 router.route('/portfolio/:id')
-  .get(portfolios.show)
+  .get(portfolios.show) // works
   .put(portfolios.update)
   .delete(portfolios.remove)
 
 router.route('/portfolio/:id/coins')
-  .get(portfolios.showCoins)
-  .post(portfolios.addCoins)
+  .get(portfolios.showCoins) // works
+  .post(portfolios.addCoins) // works
+
+
 
 router.route('/portfolio/:id/:coinId')
   .delete(portfolios.deleteCoins)
@@ -38,3 +40,5 @@ router.route('/register')
 
 router.route('/login')
   .post(users.login)
+
+module.exports = router
