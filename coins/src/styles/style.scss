@@ -192,3 +192,22 @@ tspan, .recharts-legend-item-text {
     font-size: 14px
   }
 }
+.label {
+  color: $link-text-color;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.button {
+  background: rgba(255,255,255,0.95);
+  color: $header-background-color;
+  padding: 10px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 15px 0;
+
+
+}

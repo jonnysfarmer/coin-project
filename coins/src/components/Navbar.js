@@ -20,7 +20,7 @@ const Navbar = () => {
       <Link to="/coins" className="link" onClick={() => setOpen(false)}>PORTFOLIO</Link>
 
       <Link to="/coins" className="link" onClick={() => setOpen(false)}>LOGIN</Link>
-      <Link to="/coins" className="link" onClick={() => setOpen(false)}>RESGISTER</Link>
+      <Link to="/register" className="link" onClick={() => setOpen(false)}>RESGISTER</Link>
       <Link to="/coins" className="link" onClick={() => setOpen(false)}>LOGOUT</Link>
       {/* </div> */}
     </Menu>

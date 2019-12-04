@@ -2,14 +2,11 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/enviroment')
 
-function register(req, res) {
+function register(req, res, next) {
   User
     .create(req.body) 
     .then(() => res.status(200).json({ message: 'Thank you for registering' })) 
-    .catch(err => {
-      console.log(err)
-      res.status(400).json({ message: 'Problem registering account', error: err.message })
-    })
+    .catch(next)
 }
 
 // login route -/login

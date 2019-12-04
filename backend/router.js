@@ -15,18 +15,18 @@ router.route('/portfolio')
 //can only get these if you are the specific user
 router.route('/portfolio/:id')
   .get(portfolios.show) // works
-  .put(portfolios.update)
-  .delete(portfolios.remove)
+  .put(portfolios.update) // works - temp taken off varification
+  .delete(portfolios.remove) // works - temp taken off varification 
 
 router.route('/portfolio/:id/coins')
   .get(portfolios.showCoins) // works
-  .post(portfolios.addCoins) // works
+  .post(portfolios.addCoins) // works - NO WORKS
 
 
 
 router.route('/portfolio/:id/:coinId')
-  .delete(portfolios.deleteCoins)
-  .put(portfolios.updateCoins)
+  .delete(portfolios.deleteCoins) // works - taken off varification
+  .put(portfolios.updateCoins) // works - taken off varification
 
 
 

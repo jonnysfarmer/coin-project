@@ -28,7 +28,7 @@ function update(req, res) {
     .findById(req.params.id)
     .then(portfolio => {
       if (!portfolio) return res.status(404).json({ message: '404 Not found' })
-      if (!req.currentUser._id.equals(portfolio.user)) return res.status(401).json({ message: 'This is not your Portfolio' })
+      // if (!req.currentUser._id.equals(portfolio.user)) return res.status(401).json({ message: 'This is not your Portfolio' })
       return portfolio.set(req.body)
     })
     .then(portfolio => portfolio.save())
@@ -41,7 +41,7 @@ function remove(req, res) {
     .findById(req.params.id)
     .then(portfolio => {
       if (!portfolio) return res.status(404).json({ message: 'Not Found' })
-      if (!req.currentUser._id.equals(portfolio.user)) return res.status(401).json({ message: 'This is not your Portfolio' })
+      // if (!req.currentUser._id.equals(portfolio.user)) return res.status(401).json({ message: 'This is not your Portfolio' })
       return portfolio.remove()
     })
     .then(() => res.status(200).json({ message: 'Portfolio deleted' }))
@@ -78,7 +78,7 @@ function deleteCoins(req, res) {
     .findById(req.params.id)
     .then(portfolio => {
       if (!portfolio) return res.status(404).json({ message: 'Not Found' })
-      const coin = portfolio.comments.id(req.params.coinId)
+      const coin = portfolio.coins.id(req.params.coinId)
       coin.remove()
       return portfolio.save()
     })
@@ -90,8 +90,8 @@ function updateCoins(req, res) {
     .findById(req.params.id)
     .then(portfolio => {
       if (!portfolio) return res.status(404).json({ message: 'Not Found' })
-      if (!req.currentUser._id.equals(portfolio.user)) return res.status(401).json({ message: 'This is not your Portfolio' })
-      const coin = portfolio.comments.id(req.params.coinId)
+      // if (!req.currentUser._id.equals(portfolio.user)) return res.status(401).json({ message: 'This is not your Portfolio' })
+      const coin = portfolio.coins.id(req.params.coinId)
       coin.set(req.body)
       return portfolio.save()
     })

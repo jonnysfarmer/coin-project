@@ -18,5 +18,6 @@ const portfolioSchema = new mongoose.Schema({
 })
 
 coinSchema.plugin(uniqueValidator)
+portfolioSchema.plugin(uniqueValidator)
 
 module.exports = mongoose.model('Portfolio', portfolioSchema)

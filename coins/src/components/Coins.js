@@ -10,6 +10,7 @@ const Coins = () => {
   const [coins20, setCoins20] = useState([])
   const [filtercoins, setFilterCoins] = useState([])
 
+
   const hook = () => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=1h%2C%2024hr%2C%207d')
       .then(response => {
@@ -18,6 +19,7 @@ const Coins = () => {
       })
       .catch(err => console.log(err))
   }
+
 
   // const marketCap = () =>{
   //   hook()
@@ -38,6 +40,7 @@ const Coins = () => {
 
 
 
+
   
 
 
@@ -45,7 +48,7 @@ const Coins = () => {
     console.log('loading')
     return <Loader color="#FFF" backgound="background-dark" />
   }
-  // console.log(coins20)
+
   return (
     <section className="section is-fullheight" id="coin-body">
       <div className="container">
