@@ -35,7 +35,7 @@ const Register = ( props ) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:8000/api/register', registerInfo)
-      .then(() => props.history.push('/coins'))
+      .then(() => props.history.push('/login'))
       .catch((err) => {
         // if (err.response.data.error.includes('email')) return setErrors({ message: 'Your email is already in use' })
         // if (err.response.data.error.includes('password')) return setErrors({ message: 'Passwords do not match' })
