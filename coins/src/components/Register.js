@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { withStyles } from "@material-ui/core/styles";
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import { withStyles } from "@material-ui/core/styles"
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+import Container from '@material-ui/core/Container'
+
 
 
 
@@ -14,14 +16,7 @@ const registerform = {
   passwordConfirmation: ''
 
 }
-const styles = {
-  root: {
-    background: "white"
-  },
-  input: {
-    color: "white"
-  }
-};
+
 
 const Register = ( props ) => {
 
@@ -57,8 +52,8 @@ const Register = ( props ) => {
   return (
     
     <section className="section is-fullheight background-white">
-   <div className="container">
-        <div className="coin-title">Register</div>
+      <Container component="main" maxWidth="xs">
+        <div className="register-title">Register</div>
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
           <div className="field">
             {/* <label htmlFor="" className="label">
@@ -212,9 +207,9 @@ const Register = ( props ) => {
               {error.password}
             </small>}
           </div>
-          <button className="button link">
+          {/* <button className="button link">
             Register
-          </button>
+          </button> */}
           <Button
             type="submit"
             fullWidth
@@ -226,7 +221,7 @@ const Register = ( props ) => {
             Register
           </Button>
         </form>
-      </div>
+        </Container>
     </section>
 
   )

@@ -7,8 +7,8 @@ const uniqueValidator = require('mongoose-unique-validator')
 const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
-  firstname: { type: String, required: true, unique: true },
-  surname: { type: String, required: true, unique: true },
+  firstname: { type: String, required: true },
+  surname: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true }
 }, {
