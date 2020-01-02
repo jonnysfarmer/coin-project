@@ -36,7 +36,8 @@ const Login = ( props ) => {
     axios.post('http://localhost:8000/api/login', loginInfo)
       .then((resp) => {
         Auth.setToken(resp.data.token)
-        props.history.push('/coins')})
+        console.log(resp.data)
+        props.history.push(`/portfolio/${resp.data.id}`)})
       .catch((err) => {
         // if (err.response.data.error.includes('email')) return setErrors({ message: 'Your email is already in use' })
         // if (err.response.data.error.includes('password')) return setErrors({ message: 'Passwords do not match' })

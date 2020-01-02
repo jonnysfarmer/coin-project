@@ -11,6 +11,7 @@ import Coins from './components/Coins'
 import SingleCoin from './components/SingleCoin'
 import Register from './components/Register'
 import Login from './components/Login'
+import Portfolio from './components/Portfolio';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route exact path="/coins" component={Coins} />
       <Route path="/coins/:id" component={SingleCoin} />
       <Route path="/register" component={Register} />
+      <Route path="/portfolio/:userID" component={Portfolio} />
     </Switch>
 
   </BrowserRouter>

@@ -47,8 +47,8 @@ const Register = ( props ) => {
   //need to check if blank fields are before 
   // const errors1 = error.errors.email
   
-  console.log(error.email)
-  console.log(error)
+  // console.log(error.email)
+  // console.log(error)
   return (
     
     <section className="section is-fullheight background-white">

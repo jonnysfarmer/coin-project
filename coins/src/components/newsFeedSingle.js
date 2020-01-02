@@ -1,7 +1,6 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import Loader from './Loader'
-import mapAgeCleaner from 'map-age-cleaner'
 
 
 const NewsFeedSingle = (props) => {
