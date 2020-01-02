@@ -14,6 +14,13 @@ function index(req, res) {
     .then(portfolio => res.status(200).json(portfolio))
     .catch(err => res.status(400).json({ message: err }))
 }
+function userAll(req, res) {
+  Portfolio.find({ user: req.params.userId })
+    .populate('user')
+    .then(portfolios => res.status(200).json(portfolios))
+    .catch(err => res.status(400).json(console.log(err)))
+
+}
 
 function show(req, res) {
   Portfolio.findById(req.params.id)
@@ -110,5 +117,6 @@ module.exports = {
   showCoins,
   addCoins,
   updateCoins,
-  deleteCoins
+  deleteCoins,
+  userAll
 }

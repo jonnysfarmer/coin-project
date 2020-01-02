@@ -6,18 +6,25 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const bcrypt = require('bcrypt')
 
+// const coinSchema = new mongoose.Schema({
+//   coin_name: ({ type: String, required: true, unique: true }),
+//   coin_id: ({ type: String, required: true }),
+//   number: ({ type: String, required: true })
+// })
+
 const userSchema = new mongoose.Schema({
   firstname: { type: String, required: true },
   surname: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true }
+  // portfolio: [ coinSchema ]
 }, {
-  timestamps: true,
-  toJSON: {
-    transform(doc, json) {
-      return { name: json.firstname }
-    }
-  }
+  timestamps: true
+  // toJSON: {
+  //   transform(doc, json) {
+  //     return { name: json.firstname }
+  //   }
+  // }
 })
 //returns first name opposed to ID
 
@@ -57,6 +64,8 @@ userSchema.methods.validatePassword = function validatePassword(password) {
 
 
 userSchema.plugin(uniqueValidator)
+// coinSchema.plugin(uniqueValidator)
+
 
 
 module.exports = mongoose.model('User', userSchema)

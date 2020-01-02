@@ -12,6 +12,9 @@ router.route('/portfolio')
   .get(portfolios.index) // WORKS
   .post(portfolios.create)
 
+router.route('/portfolio/:userId')
+  .get(portfolios.userAll) // works
+
 //can only get these if you are the specific user
 router.route('/portfolio/:id')
   .get(portfolios.show) // works
