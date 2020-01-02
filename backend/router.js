@@ -4,13 +4,14 @@ const portfolios = require('./controllers/portfolios')
 const users = require('./controllers/users')
 // Secure route is our custom middleware
 // const secureRoute = require('./lib/secureRoute')
+const secureRoute = require('./lib/secureRoute')
 
 //All these are secure Routes
 
 
 router.route('/portfolio')
   .get(portfolios.index) // WORKS
-  .post(portfolios.create)
+  .post(secureRoute, portfolios.create)
 
 router.route('/portfolio/:userId')
   .get(portfolios.userAll) // works

@@ -7,6 +7,7 @@ import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import TextField from '@material-ui/core/TextField'
 import Container from '@material-ui/core/Container'
+import auth from '../lib/auth'
 
 
 const Portfolio = (props) => {
@@ -14,12 +15,28 @@ const Portfolio = (props) => {
   const [portfolio, setPortfolio] = useState([])
   const [errors, setErrors] = useState([])
   const [modelState, setModelState] = useState(false)
+  const [newPortfolio, setNewPortfolio] = useState({})
 
   const portfolioHook = () => {
     const userID = props.match.params.userID
     axios.get(`http://localhost:8000/api/portfolio/${userID}`)
       .then(response => setPortfolio(response.data)) //this will only return list with a status of active
       .catch(err => setErrors(err))
+  }
+  const handleChangePortfolio = (e) => {
+    setNewPortfolio({ ...newPortfolio, [e.target.name]: e.target.value })
+    console.log(newPortfolio)
+  }
+  const handleSubmitPortfolio = (e) => {
+    modelClose()
+    e.preventDefault()
+    axios.post('http://localhost:8000/api/portfolio', newPortfolio, {
+      headers: { Authorization: `Bearer ${auth.getToken()}` }
+    })
+      .then(() => portfolioHook())
+      .catch((err) => {
+        setErrors (err.response.data.errors )
+      })
   }
 
   const modelOpen = () => {
@@ -75,7 +92,7 @@ const Portfolio = (props) => {
                     autoComplete="portfolioname"
                     autoFocus
                     color="white"
-                    // onChange={(e) => handleChange(e)}
+                    onChange={(e) => handleChangePortfolio(e)}
                     type="text"
                   />
                   <Button
@@ -85,6 +102,7 @@ const Portfolio = (props) => {
                     color="primary"
                     className='button link'
                     label="create"
+                    onClick={(e) => handleSubmitPortfolio(e)}
                   >
                     Create
                   </Button>
@@ -92,6 +110,13 @@ const Portfolio = (props) => {
               </section>
             </Fade>
           </Modal>
+          {portfolio.map((ele, i) => {
+            return (
+              <div>{ele.portfolioname}
+              </div>
+            )
+
+          })}
 
 
 

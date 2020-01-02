@@ -24,6 +24,14 @@ function login(req, res) {
     .catch(() => res.status(401).json({ message: 'Unauthorized' } ))
 }
 
+// function index(req, res) {
+//   User
+//     .find()
+//     // .populate('user') //this bascially means it also shows the object user.  Without this, its just the ID!
+//     .then(user => res.status(200).json(portfolio))
+//     .catch(err => res.status(400).json({ message: err }))
+// }
+
 module.exports = {
   register,
   login
