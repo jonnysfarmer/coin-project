@@ -17,7 +17,7 @@ router.route('/portfolio/:userId')
   .get(portfolios.userAll) // works
 
 //can only get these if you are the specific user
-router.route('/portfolio/:id')
+router.route('/portfolio/single/:id')
   .get(portfolios.show) // works
   .put(portfolios.update) // works - temp taken off varification
   .delete(portfolios.remove) // works - temp taken off varification 

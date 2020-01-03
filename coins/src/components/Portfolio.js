@@ -46,6 +46,11 @@ const Portfolio = (props) => {
     setModelState(false)
   }
 
+  const viewSinglePort = (ele) => {
+    props.history.push(`/portfolio/${ele._id}`)
+
+  }
+
   useEffect(portfolioHook, [])
   console.log(portfolio)
 
@@ -53,7 +58,7 @@ const Portfolio = (props) => {
     <section className="hero is-fullheight background-white">
       <section className="section">
         <div className="container">
-          <div className="register-title">Portfolio</div>
+          <div className="register-title">Portfolio Dashboard</div>
           <Button
             type="submit"
             variant="contained"
@@ -112,7 +117,7 @@ const Portfolio = (props) => {
           </Modal>
           {portfolio.map((ele, i) => {
             return (
-              <div>{ele.portfolioname}
+              <div key={i} onClick={()=>viewSinglePort(ele)}>{ele.portfolioname}
               </div>
             )
 
