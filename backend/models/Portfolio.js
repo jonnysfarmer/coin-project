@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
 const coinSchema = new mongoose.Schema({
-  coin_name: ({ type: String, required: true, unique: true }),
-  coin_id: ({ type: String, required: true }),
+  coin_name: ({ type: String, required: true }),
+  coin_id: ({ type: String }),
   number: ({ type: String, required: true })
 })
 

@@ -68,7 +68,7 @@ function showCoins(req, res) {
 
 
 function addCoins(req, res) {
-  req.body.user = req.currentUser
+  // req.body.user = req.currentUser
   Portfolio
     .findById(req.params.id)
     .then(portfolio => {
@@ -77,7 +77,7 @@ function addCoins(req, res) {
       return portfolio.save()
     })
     .then(portfolio => res.status(201).json(portfolio))
-    .catch(err => res.status(404).json({ message: err }))
+    .catch(err => console.log(err))
 }
 
 function deleteCoins(req, res) {

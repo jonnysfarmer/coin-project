@@ -28,7 +28,7 @@ const Portfolio = (props) => {
     console.log(newPortfolio)
   }
   const handleSubmitPortfolio = (e) => {
-    modelClose()
+    setModelState(false)
     e.preventDefault()
     axios.post('http://localhost:8000/api/portfolio', newPortfolio, {
       headers: { Authorization: `Bearer ${auth.getToken()}` }
@@ -44,6 +44,7 @@ const Portfolio = (props) => {
   }
   const modelClose = () => {
     setModelState(false)
+    setNewPortfolio({})
   }
 
   const viewSinglePort = (ele) => {
