@@ -9,7 +9,7 @@ Current API's used are Coingecko and Messari
 
 Check out the GitHub [Repo](https://github.com/jonnysfarmer/coin-project)
 
-![Front-page](./images/coins.gif)
+![Front-page](./coins/images/coins.gif)
 
 ## Technologies used
 * React
