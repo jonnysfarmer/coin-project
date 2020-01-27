@@ -25,16 +25,17 @@ const Coins = () => {
   //   hook()
   //   console.log('updated')
   // }
-  // const filter = () => {
-  //   const filter = coins20.sort((a, b) => (b.current_price) - (a.current_price))
-  //   // console.log(filter)
-  //   setFilterCoins('')
-  //   setFilterCoins(filter)
-  //   setCoins20(filter)
-  //   console.log(filtercoins)
-  //   console.log('done')
+  const filter = () => {
+    const filter = coins20.sort((a, b) => (b.current_price) - (a.current_price))
+    // console.log(filter)
+    setFilterCoins('')
+    setFilterCoins(filter)
+    setCoins20(filter)
+    console.log(filtercoins)
+    console.log('done')
+    // Want to improve this function
 
-  // }
+  }
  
   useEffect(hook, [])
 
